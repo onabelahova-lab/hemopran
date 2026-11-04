@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Первостольник: смена с Hemopran</title>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600&family=Unbounded:wght@600&family=Marck+Script&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eaf4ee;--sf:#fff;--ink:#0f2a1f;--mu:#4b6558;--g:#0e8a4f;--gi:#06502d;--ln:#cfe2d6;--ok:#0b7a45;--okb:#e0f4e8;--mid:#8a5a00;--midb:#fbefd2;--bad:#b02a40;--badb:#fbe3e8;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1812;--sf:#12251c;--ink:#e6f3ec;--mu:#9bb8a8;--g:#3fcf86;--gi:#bff0d6;--ln:#244336;--ok:#5fe0a0;--okb:#12382a;--mid:#e8b954;--midb:#3a2f12;--bad:#ff8196;--badb:#3d1a22}}
+:root[data-theme="dark"]{--bg:#0b1812;--sf:#12251c;--ink:#e6f3ec;--mu:#9bb8a8;--g:#3fcf86;--gi:#bff0d6;--ln:#244336;--ok:#5fe0a0;--okb:#12382a;--mid:#e8b954;--midb:#3a2f12;--bad:#ff8196;--badb:#3d1a22}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 Onest,system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:720px;margin:0 auto;padding:16px}
+h1,h2{font-family:Unbounded,Onest,system-ui,sans-serif;font-weight:600;line-height:1.2;margin:0}
+h1{font-size:clamp(22px,5vw,30px)}
+h2{font-size:18px}
+.hud{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;background:var(--sf);border:2px solid var(--ln);border-radius:14px;padding:10px 14px;margin-bottom:14px}
+.hud small{display:block;color:var(--mu);font-size:12px}
+.bar{height:10px;background:var(--ln);border-radius:6px;overflow:hidden;margin-top:4px}
+.bar i{display:block;height:100%;background:var(--g);transition:width .4s}
+.win{background:var(--sf);border:2px solid var(--ln);border-top:10px solid var(--g);border-radius:6px 6px 14px 14px;padding:16px}
+.who{display:flex;gap:12px;align-items:center;margin-bottom:10px}
+.av{font-size:40px;line-height:1}
+.who b{display:block}.who span{color:var(--mu);font-size:14px}
+.say{font-size:18px;margin:0 0 12px}
+.rx{font-family:"Marck Script",cursive,Onest,sans-serif;font-size:22px;background:#fffdf3;color:#27304a;border:1px dashed #b9b28f;padding:10px 14px;margin:0 0 12px;transform:rotate(-1deg);border-radius:4px}
+.rx.hard{font-size:20px;letter-spacing:-.5px;line-height:1.25;opacity:.85;filter:blur(.35px);transform:rotate(-2.5deg) skewX(-8deg)}
+.opts{display:grid;gap:8px;margin-top:6px}
+button{font:inherit;cursor:pointer}
+.opt{text-align:left;background:var(--bg);color:var(--ink);border:2px solid var(--ln);border-radius:10px;padding:10px 12px}
+.opt:hover:not(:disabled){border-color:var(--g)}
+.opt:disabled{cursor:default}
+.opt.pick{border-color:var(--g);background:var(--sf)}
+button:focus-visible,summary:focus-visible{outline:3px solid var(--g);outline-offset:2px}
+.fb{margin-top:12px;border-radius:10px;padding:12px 14px;border:2px solid}
+.fb.ok{background:var(--okb);border-color:var(--ok)}.fb.mid{background:var(--midb);border-color:var(--mid)}.fb.bad{background:var(--badb);border-color:var(--bad)}
+.fb b{display:block;margin-bottom:2px}
+.fb.ok b{color:var(--ok)}.fb.mid b{color:var(--mid)}.fb.bad b{color:var(--bad)}
+.fb p{margin:0 0 6px}
+.go{background:var(--g);color:#fff;border:0;border-radius:10px;padding:11px 20px;font-weight:600;margin-top:8px}
+:root[data-theme="dark"] .go{color:#06281a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .go{color:#06281a}}
+details{background:var(--sf);border:2px solid var(--ln);border-radius:12px;padding:10px 14px;margin-top:14px}
+summary{cursor:pointer;font-weight:600;color:var(--gi)}
+details h3{font-size:15px;margin:12px 0 2px}
+details ul{margin:4px 0 0;padding-left:20px}
+.note{color:var(--mu);font-size:13px;margin-top:14px}
+.lead{margin:10px 0 16px;color:var(--mu)}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.stats div{background:var(--bg);border-radius:10px;padding:8px 12px}
+.hud{grid-template-columns:repeat(auto-fit,minmax(118px,1fr))}.hud b{display:block}
+.sec{font-family:Oswald,Onest,sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:15px;color:var(--mu);margin:22px 0 8px;font-weight:600;display:flex;justify-content:space-between}
+.lab{font-family:Oswald,Onest,sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--mu);font-weight:600}
+.row{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:center;margin-bottom:12px}
+@media(max-width:560px){.row{grid-template-columns:1fr;gap:4px}}
+.seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:4px;background:var(--bg);border-radius:14px;padding:4px}
+.seg button{border:0;background:none;color:var(--mu);font-weight:600;border-radius:11px;padding:10px 6px}
+.seg button[aria-checked=true]{background:var(--sf);color:var(--gi);box-shadow:0 2px 6px rgba(0,0,0,.18)}
+.arts{display:flex;gap:8px;flex-wrap:wrap}
+.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px}
+.card{border:1px dashed var(--ln);border-radius:10px;padding:8px 10px;font-size:13px;background:var(--sf);color:var(--ink);text-align:left}
+.card span{color:var(--mu)}.card.on{border:2px solid var(--g);background:var(--okb)}.card.lk{color:var(--mu)}
+.big{display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;text-align:left;background:linear-gradient(#12924f,#0b6d3c);color:#fff;border:0;border-bottom:5px solid #06402a;border-radius:18px;padding:14px 18px}
+.big b{font-family:Oswald,Onest,sans-serif;font-size:28px;text-transform:uppercase;font-weight:600;display:block;line-height:1.1}
+.big span span{font-size:13px;opacity:.95}
+.big i{font-style:normal;background:#fff;color:#0b6d3c;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:24px;flex:none}
+.hintb{background:none;border:2px dashed var(--g);color:var(--gi);border-radius:10px;padding:6px 10px;margin-bottom:8px;font-size:14px}
+label{display:block;margin:0 0 12px;font-weight:600}
+input[type=text]{display:block;width:100%;margin-top:4px;font:inherit;padding:10px 12px;border:2px solid var(--ln);border-radius:10px;background:var(--bg);color:var(--ink)}
+input:focus-visible{outline:3px solid var(--g)}
+.chk{display:flex;gap:8px;align-items:flex-start;font-weight:400;font-size:14px}
+.link{background:none;border:0;color:var(--gi);text-decoration:underline;padding:0;font-size:inherit}
+.err{color:var(--bad);font-weight:600;margin:0 0 8px}
+#lb ol{padding-left:22px;margin:4px 0 12px}#lb li.me{font-weight:600}
+</style>
+</head>
+<body>
+<main>
+<header><h1>Первостольник</h1><p class="lead">Смена в аптеке: подберите форму Hemopran, выясните детали и выполните план допродаж. 1 средство = 36 BYN.</p></header>
+<div id="app"></div>
+<details id="info"><summary>Справка: Hemopran</summary>
+<h3>Крем</h3>
+<ul>
+<li>Защитный эндоректальный крем, 35 мл, с канюлей.</li>
+<li>Вспомогательное средство при варикозном геморроидальном синдроме (внутренние и наружные узлы) и при раздражении кожи и слизистой анальной и перианальной зоны.</li>
+<li>Состав по данным производителя: гликолевые экстракты конского каштана, гамамелиса, иглицы, алоэ; авенантрамиды овса; масло жожоба.</li>
+<li>Применение: очистить и просушить область, надеть канюлю на тубу, аккуратно ввести, затем вымыть канюлю с мылом. Чтобы снизить трение, лучше использовать перед дефекацией.</li>
+</ul>
+<h3>Суппозитории</h3>
+<ul>
+<li>Защитные эндоректальные суппозитории по 2 г, в упаковке 7 штук. Предназначены для профилактики и лечения внутренних и наружных геморроидальных узлов.</li>
+<li>Гиалуроновая кислота и алоэ создают защитную смягчающую плёнку и помогают восстановить увлажнение и скольжение. Экстракты иглицы, гамамелиса и конского каштана оказывают успокаивающее и антиоксидантное действие. В составе также витамин Е.</li>
+<li>Схема по данным производителя: по одному суппозиторию в день, вечером, 7 дней подряд или по совету врача. По возможности не опорожнять кишечник не менее часа после введения, иначе введение повторяют.</li>
+</ul>
+<h3>Гель</h3>
+<ul>
+<li>Форма для местного ухода, которую в игре предлагают как дополнение к крему или суппозиториям.</li>
+<li>Состав, показания и схему применения геля сверяйте с вашей инструкцией.</li>
+</ul>
+<h3>Общее</h3>
+<ul>
+<li>Противопоказание: повышенная чувствительность к компонентам.</li>
+<li>Не заменяет осмотр врача. Всегда сверяйтесь с инструкцией на вашей упаковке.</li>
+</ul></details>
+<p class="note">Учебная игра. Это не медицинская рекомендация: при симптомах обращайтесь к врачу.</p>
+</main>
+<script>
+var C=[
+{t:"09:10",n:"Максим, 38 лет",a:"🧑‍💼",s:"Что-нибудь от геморроя. Сижу целыми днями, а теперь сидеть неприятно.",o:[
+{l:"Hemopran крем: объяснить, как применять (с канюлей, лучше перед дефекацией), и сказать, что при затянувшихся симптомах нужен проктолог",v:2,n:1,f:"Это его профиль: вспомогательное средство при геморроидальном синдроме и раздражении кожи и слизистой. Вы объяснили применение и назвали момент, когда пора к врачу."},
+{l:"Гормональные свечи: «самые сильные»",v:0,n:0,f:"Гормональные средства отпускаются и применяются по назначению врача. Посетителю без диагноза это не предлагают."},
+{l:"Только таблетку обезболивающего",v:1,n:0,f:"Боль она притупит, но причину и местный дискомфорт не решит. Лучше предложить средство по профилю."},
+{l:"Ничего не продавать: «идите к врачу»",v:0,n:0,f:"Тревожных признаков в рассказе нет. Отказ без причины лишает человека помощи, а доверие падает."}]},
+{t:"10:30",n:"Елена, 29 лет",a:"🤰",s:"Я на 5-м месяце. Появился дискомфорт, нужно что-то мягкое и безопасное. Не хочу навредить малышу.",o:[
+{l:"Hemopran крем и совет рассказать об этом акушеру-гинекологу",v:2,n:1,f:"Производитель допускает применение при беременности, а в небольшом исследовании крем использовали у беременных. Но решение всё равно за врачом, поэтому совет сообщить акушеру правильный."},
+{l:"Любое слабительное с полки: «подруги пьют»",v:0,n:0,f:"Беременным сильные слабительные без назначения не подбирают. Это риск."},
+{l:"«При беременности ничего нельзя», отправить домой",v:1,n:0,f:"Осторожность хороша, но варианты есть. Человеку нужен конкретный совет, а не отказ."}]},
+{t:"12:05",n:"Галина Петровна, 67 лет",a:"👵",rx:"Rp: Supp. Hemopr. № VII<br>D.S. 1 supp. vesp. in ano",hard:1,s:"Врач выписал, а я почерк не разобрала. Там что-то по-латыни. Вы поймёте?",o:[
+{l:"Расшифровать: суппозитории Hemopran, 7 штук. Объяснить: по одному вечером, после введения по возможности не ходить в туалет около часа",v:2,n:1,f:"Верно: Supp. Hemopr. № VII — это 7 суппозиториев, «1 supp. vesp.» — по одному вечером. Вы расшифровали рецепт и объяснили схему."},
+{l:"Выдать Hemopran крем: «это то же самое»",v:0,n:0,f:"Врач назначил суппозитории. Форма другая, а подменять её без согласования нельзя."},
+{l:"Сказать, что почерк нечитаем, и отправить обратно к врачу",v:1,n:0,f:"Осторожность понятна, но латинские сокращения для первостольника рабочий материал. Человек ушёл ни с чем."},
+{l:"Выдать любые суппозитории от геморроя",v:0,n:0,f:"Угадывать нельзя. Вы не выдали то, что назначил врач."}]},
+{t:"14:20",n:"Виктор, 52 года",a:"👨",s:"Внутри чувство распирания, а на туалетной бумаге остаётся кровь. Мне говорили, есть и крем, и свечи. Что лучше взять?",o:[
+{l:"Суппозитории Hemopran: объяснить схему (по одному вечером, 7 дней) и сказать, что при повторяющейся крови нужен проктолог",v:2,n:1,f:"Узел внутренний, ощущение распирания идёт изнутри, поэтому форма подобрана верно: суппозиторий действует там, где нужно. И вы напомнили про врача."},
+{l:"Hemopran крем",v:1,n:1,f:"Крем тоже уместен для местного ухода, но при внутренней локализации и распирании по сценарию нужно предлагать суппозитории."},
+{l:"Посоветовать подождать, само пройдёт",v:0,n:0,f:"Кровь на бумаге и распирание — повод помочь, а не отмахнуться."}]},
+{t:"16:00",n:"Ирина, 45 лет",a:"👩",s:"Геморрой обострился из-за запоров. Хочу слабительное, и чтобы быстро.",o:[
+{l:"Мягкое средство от запора, совет по питью и клетчатке, и Hemopran для местного ухода",v:2,n:1,f:"Вы работаете с причиной (запор) и симптомом (местный дискомфорт). Здесь допродажа уместна и помогает человеку."},
+{l:"Самое сильное стимулирующее слабительное",v:1,n:0,f:"Быстро, но резкая стимуляция при геморрое не лучший выбор, а про причину и уход вы промолчали."},
+{l:"Только Hemopran, про запор не говорить",v:1,n:1,f:"Местный уход нужен, но причина обострения осталась без внимания."}]},
+{t:"17:40",n:"Наталья, 34 года",a:"🙋‍♀️",s:"Мне нужен Hemopran, мне его посоветовали. Дайте.",o:[
+{l:"Уточнить, что беспокоит и какая форма нужна (крем или суппозитории), подобрать её и предложить гель в дополнение",v:2,n:2,f:"Бренд назван, но форму выбирают под симптомы. Вы выяснили задачу, подобрали форму и предложили гель: это уместная допродажа."},
+{l:"Продать крем, не уточняя",v:1,n:1,f:"Продажа состоялась, но форму вы выбрали наугад, а допродажу упустили."},
+{l:"Сказать, что такого нет, и предложить другой бренд",v:0,n:0,f:"Человек пришёл за конкретным средством. Отказывать без проверки наличия и форм нельзя."}]},
+{t:"18:30",n:"Сергей, 58 лет",a:"👴",s:"Мне нужно средство Х от геморроя. Говорят, у него сосудосуживающий эффект, быстро снимает отёк. Дайте.",o:[
+{l:"Уточнить симптомы и спросить про давление (нет ли артериальной гипертензии), объяснить риски сосудосуживающих и предложить Hemopran",v:2,n:1,f:"Покупатель признался, что у него артериальная гипертензия и он принимает таблетки. Сосудосуживающие средства при гипертензии могут повышать давление, поэтому вы подобрали альтернативу для местного ухода и напомнили о контроле давления и враче."},
+{l:"Продать средство Х без вопросов",v:0,n:0,f:"Вы не выяснили симптомы и не спросили про давление. При гипертензии это опасно."},
+{l:"Спросить только про симптомы и продать Х",v:1,n:0,f:"Часть вопросов вы задали, но про давление не спросили, а это главное при сосудосуживающем эффекте."},
+{l:"Спросить про давление, но отказать и ничего не предлагать",v:1,n:0,f:"Осторожность верная, но человек остался без помощи. Нужна альтернатива."}]},
+{t:"20:15",n:"Марина, 31 год",a:"👩‍🦰",s:"После запора появилась трещина. Больно ходить в туалет и потом ещё долго жжёт.",o:[
+{l:"Hemopran крем и гель, совет по питью и клетчатке, и к врачу, если боль не проходит",v:2,n:2,f:"Вы предложили крем и гель и дали совет, как не допустить повторного запора. Тревожный сигнал (боль не проходит) обозначили."},
+{l:"Только Hemopran крем",v:1,n:1,f:"Крем уместен, но допродажа геля и совет по профилактике запора упущены."},
+{l:"Только слабительное",v:1,n:0,f:"Причину вы поправили, но боль и жжение остались без внимания."},
+{l:"Обезболивающие таблетки без обсуждения",v:0,n:0,f:"Вы не выяснили ни форму, ни причину. Это не решение для человека с трещиной."}]},
+{t:"02:40",n:"Ночное окошко. Андрей, 36 лет",a:"🌙",s:"Уже несколько дней сильный зуд и жжение в области ануса, особенно к ночи. Спать не могу. Дайте что-нибудь, чтобы стало спокойнее.",o:[
+{l:"Hemopran крем и гель: объяснить нанесение и сказать, что при затянувшемся зуде нужен врач",v:2,n:2,f:"Верно. Вы предложили крем и гель для местного ухода и обозначили, когда пора к врачу."},
+{l:"Только Hemopran крем",v:1,n:1,f:"Правильное направление, но допродажа геля упущена."},
+{l:"Антигистаминные таблетки без вопросов",v:1,n:0,f:"Вы не выяснили, откуда зуд и что беспокоит. Местное средство остаётся без внимания."},
+{l:"«Приходите утром, ночью продаём только срочное»",v:0,n:0,f:"Ночное окошко для того и работает: человеку нужна помощь сейчас."}]}
+];
+var PRICE=36,K="pervo-hemopran-v2",app=document.getElementById("app"),cfg={sh:"rand",ex:"int",ad:"f",art:"mug"},st,P,D={sh:0,ni:0,seen:[],bd:[],ar:["mug"]};
+function load(){try{P=Object.assign({},D,JSON.parse(localStorage.getItem(K)||"{}"))}catch(e){P=Object.assign({},D)}}
+function save(){try{localStorage.setItem(K,JSON.stringify(P))}catch(e){}}
+var A=[{id:"mug",s:"Кружка",n:"Кружка «Лучший фармацевт»",d:"+10 нервов в начале смены.",u:"Открыт сразу"},
+{id:"hem",s:"Гематоген",n:"Гематоген в кармане",d:"После четвёртого клиента +10 нервов.",u:"Сыграйте две смены"},
+{id:"thermos",s:"Термос",n:"Термос с чаем",d:"Нервы тратятся на треть медленнее.",u:"Закройте ночную смену"},
+{id:"portrait",s:"Портрет",n:"Портрет заведующей",d:"Риск проверки растёт на треть медленнее.",u:"Закончите смену без ошибок"},
+{id:"mash",s:"Справочник",n:"Справочник Машковского",d:"Раз за смену убирает один неверный вариант.",u:"Сыграйте пять смен"}];
+var B=[{id:"clean",n:"Чистая смена",d:"Ни одной ошибки за смену"},{id:"machine",n:"Машина допродаж",d:"План перевыполнен на четверть"},{id:"zen",n:"Дзен первого стола",d:"Закончили смену с нервами не ниже 60"},{id:"insp",n:"Проверку пережили",d:"Инспектор пришёл, а смена закончена"},{id:"owl",n:"Сова",d:"Закрыли ночную смену без срыва"},{id:"door",n:"Очередь до дверей",d:"В очереди стояло 10 человек"},{id:"ask",n:"Главное спросили",d:"Выяснили про давление у покупателя"},{id:"rx",n:"Эксперт рецепты",d:"Расшифровали латинский рецепт"},{id:"coll",n:"Коллекционер",d:"Встретили 6 из 9 типажей"}];
+function nm(a){return A.filter(function(x){return x.id==a})[0]}
+function has(l,v){return l.indexOf(v)>=0}
+function add(l,v){if(has(l,v))return 0;l.push(v);return 1}
+function cl(v){return Math.max(0,Math.min(100,v))}
+function sh(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
+function planFor(n,e){return n?(e?7:5):(e?9:7)}
+function clk(m){m=m%1440;return("0"+Math.floor(m/60)).slice(-2)+":"+("0"+m%60).slice(-2)}
+function seg(k,o){return '<div class="seg" role="radiogroup">'+o.map(function(x){return '<button role="radio" aria-checked="'+(cfg[k]==x[0])+'" data-k="'+k+'" data-v="'+x[0]+'">'+x[1]+'</button>'}).join("")+'</div>'}
+function grid(a){return '<div class="g">'+a.map(function(x){return '<div class="card'+(x.on?' on':'')+'"><b>'+x.t+'</b><br><span>'+x.d+'</span></div>'}).join("")+'</div>'}
+function home(){
+var ar=A.filter(function(a){return has(P.ar,a.id)}),lock=A.length-ar.length,cur=nm(cfg.art);
+var sub=(cfg.sh=="night"?"Ночь 20:00–08:00 · план "+planFor(1,cfg.ex=="exp")+" ср.":cfg.sh=="day"?"День 08:00–20:00 · план "+planFor(0,cfg.ex=="exp")+" ср.":"День или ночь по жребию")+" · "+cur.s;
+app.innerHTML='<section class="win"><div class="row"><span class="lab">Смена</span>'+seg("sh",[["rand","Смена дня"],["day","Дневная"],["night","Ночная"]])+'</div><div class="row"><span class="lab">Опыт</span>'+seg("ex",[["int","Стажёр"],["exp","Со стажем"]])+'</div><div class="row"><span class="lab">Обращаются</span>'+seg("ad",[["f","Девушка"],["m","Молодой человек"]])+'</div><div class="row"><span class="lab">Артефакт</span><div class="arts">'+ar.map(function(a){return '<button class="card'+(a.id==cfg.art?' on':'')+'" data-k="art" data-v="'+a.id+'"><b>'+a.s+'</b></button>'}).join("")+(lock?'<div class="card lk">🔒<br>Ещё '+lock+'</div>':'')+'</div></div><p class="note" style="margin:0 0 14px">'+cur.n+': '+cur.d+'</p><button class="big" id="go"><span><b>Открыть окошко</b><span>'+sub+'</span></span><i aria-hidden="true">→</i></button></section>'
++'<h2 class="sec">Как играть</h2>'+grid([{t:"Очередь",d:"Каждый ответ стоит минут: чем подробнее совет, тем дольше. Пока вы заняты, приходят новые люди, после десяти они уходят."},{t:"Касса",d:"Честный совет обычно приносит меньше, чем допродажа, но допродажа должна отвечать на симптом. Ночью план ниже."},{t:"Доверие и нервы",d:"Если одно из них упадёт до нуля, смена закончится досрочно."},{t:"Риск проверки",d:"Растёт от ошибок. Чем он выше, тем вероятнее придёт инспектор."}])
++'<h2 class="sec"><span>Артефакты</span><span>'+ar.length+' из '+A.length+'</span></h2>'+grid(A.map(function(a){var o=has(P.ar,a.id);return{t:a.n,d:a.d+(o?"":" Как открыть: "+a.u.toLowerCase()+"."),on:o}}))
++'<h2 class="sec"><span>Бестиарий покупателей</span><span>'+P.seen.length+' из '+C.length+'</span></h2>'+grid(C.map(function(c,i){return has(P.seen,i)?{t:c.a+" "+c.n,d:"уже встречали",on:1}:{t:"???",d:"ещё не встречали"}}))
++'<h2 class="sec"><span>Значки</span><span>'+P.bd.length+' из '+B.length+'</span></h2>'+grid(B.map(function(b){return{t:b.n,d:b.d,on:has(P.bd,b.id)}}));
+}
+app.onclick=function(e){var b=e.target.closest("[data-k]");if(b){cfg[b.dataset.k]=b.dataset.v;var y=window.scrollY;home();window.scrollTo(0,y)}else if(e.target.closest("#go"))begin()};
+function begin(){
+var n=cfg.sh=="night"||(cfg.sh=="rand"&&Math.random()<.5),e=cfg.ex=="exp";
+st={i:0,L:n?[3,4,5,6,7,8]:[0,1,2,3,4,5,6,7],night:n,plan:planFor(n,e),tr:e?50:60,ne:Math.min(100,70+(cfg.art=="mug"?10:0)),n:0,rk:e?15:5,q:2,m:n?1200:480,k:[0,0,0],ins:0,hint:0,ask:0,rx:0,door:0,art:cfg.art};
+show();window.scrollTo(0,0)}
+function bar(l,v){return '<div><small>'+l+'</small><div class="bar" role="progressbar" aria-label="'+l+'" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+v+'"><i style="width:'+v+'%"></i></div></div>'}
+function hud(){return '<div class="hud">'+bar("Доверие",st.tr)+bar("Нервы",st.ne)+'<div><small>План допродаж</small><b>'+st.n+'/'+st.plan+' · '+st.n*PRICE+' BYN</b></div><div><small>Риск проверки</small><b>'+Math.round(st.rk)+'%</b></div><div><small>Очередь</small><b>'+st.q+' чел.</b></div></div>'}
+function show(){
+var idx=st.L[st.i],c=C[idx],o=sh(c.o);if(add(P.seen,idx))save();
+var s=(cfg.ad=="f"?"Девушка, ":"Молодой человек, ")+c.s.charAt(0).toLowerCase()+c.s.slice(1);
+app.innerHTML=hud()+'<section class="win" aria-live="polite"><div class="who"><div class="av" aria-hidden="true">'+c.a+'</div><div><b>'+c.n+'</b><span>'+clk(st.m)+' · клиент '+(st.i+1)+' из '+st.L.length+'</span></div></div>'+(c.rx?'<div class="rx'+(c.hard?' hard':'')+'">'+c.rx+'</div>':'')+'<p class="say">«'+s+'»</p>'+(st.art=="mash"&&!st.hint?'<button class="hintb" id="hint">Справочник: убрать неверный вариант</button>':'')+'<div class="opts"></div><div id="fb"></div></section>';
+var box=app.querySelector(".opts");
+o.forEach(function(x){var b=document.createElement("button");b.className="opt";b.textContent=x.l;b._x=x;b.onclick=function(){pick(x,b)};box.appendChild(b)});
+var h=document.getElementById("hint");if(h)h.onclick=function(){var bd=[].filter.call(box.children,function(b){return b._x.v==0&&!b.hidden})[0];if(bd){bd.hidden=true;st.hint=1;h.remove()}};
+}
+function pick(x,b){
+app.querySelectorAll(".opt").forEach(function(e){e.disabled=true});var h=document.getElementById("hint");if(h)h.remove();b.classList.add("pick");
+var v=x.v,idx=st.L[st.i],m=4+(x.l.length>110?6:x.l.length>70?4:x.l.length>40?2:0),th=st.art=="thermos"?.67:1,pt=st.art=="portrait"?.67:1;
+var d=[-15,3,12][v],ln=Math.round([12,6,3][v]*th);
+st.tr=cl(st.tr+d);st.ne=cl(st.ne-ln);st.n+=x.n;st.k[v]++;st.rk=Math.min(100,st.rk+[20,6,0][v]*pt);st.m+=m;
+if(idx==6&&v==2)st.ask=1;if(idx==2&&v==2)st.rx=1;
+var ex="";st.q=Math.max(0,st.q-1+Math.floor(m/4));
+if(st.q>=10){st.door=1;if(st.q>10){st.q=10;st.tr=cl(st.tr-5);st.ne=cl(st.ne-5);ex+="Очередь переполнилась, часть людей ушла (−5 к доверию и нервам). "}}
+if(st.art=="hem"&&st.i==3){st.ne=cl(st.ne+10);ex+="Гематоген: +10 нервов. "}
+if(!st.ins&&st.rk>=25&&Math.random()*100<st.rk*.6){st.ins=1;st.tr=cl(st.tr-10);st.n=Math.max(0,st.n-1);ex+="Пришёл инспектор: нарушения вскрылись (−10 к доверию, −1 средство из плана). "}
+app.querySelector(".hud").outerHTML=hud();
+var last=st.i>=st.L.length-1,over=st.tr<=0||st.ne<=0,lab=["Ошибка","Частично","Верно"][v],ic=["✕","~","✓"][v],k=["bad","mid","ok"][v];
+var f=document.getElementById("fb");
+f.innerHTML='<div class="fb '+k+'"><b>'+ic+' '+lab+' ('+(d>0?"+":"")+d+' к доверию, −'+ln+' нервов'+(x.n?', +'+x.n*PRICE+' BYN':'')+', '+m+' мин)</b><p>'+x.f+'</p>'+(ex?'<p><i>'+ex+'</i></p>':'')+'</div><button class="go">'+(last||over?"Закончить смену":"Следующий посетитель")+'</button>';
+var g=f.querySelector(".go");g.onclick=function(){if(last||over)end(over);else{st.i++;show();window.scrollTo(0,0)}};g.focus();
+}
+function end(over){
+var c0=st.k[0]==0,nb=[],na=[];P.sh++;if(st.night&&!over)P.ni++;
+function bg(id,c){if(c&&add(P.bd,id))nb.push(id)}
+function ua(id,c){if(c&&add(P.ar,id))na.push(id)}
+if(!over){bg("clean",c0);bg("zen",st.ne>=60);bg("insp",st.ins);bg("owl",st.night);bg("machine",st.n>=st.plan*1.25)}
+bg("door",st.door);bg("ask",st.ask);bg("rx",st.rx);bg("coll",P.seen.length>=6);
+ua("hem",P.sh>=2);ua("thermos",st.night&&!over);ua("portrait",c0&&!over);ua("mash",P.sh>=5);save();
+var r=st.tr>=90?"Заведующий аптекой":st.tr>=65?"Первостольник":"Стажёр",ok=st.n>=st.plan;
+var nw=nb.map(function(i){return "значок «"+B.filter(function(b){return b.id==i})[0].n+"»"}).concat(na.map(function(i){return "артефакт «"+nm(i).n+"»"}));
+app.innerHTML=hud()+'<section class="win"><h2>'+(over?"Смена окончена досрочно":"Смена закончена")+'</h2><p class="say">Ваш ранг: <b>'+r+'</b></p><p class="say">'+(ok?"План допродаж выполнен: ":"План допродаж не выполнен: ")+'<b>'+st.n+' из '+st.plan+' средств ('+st.n*PRICE+' из '+st.plan*PRICE+' BYN)</b>'+(ok?"":", не хватило "+(st.plan-st.n))+'.</p><div class="stats"><div>Верно: <b>'+st.k[2]+'</b></div><div>Частично: <b>'+st.k[1]+'</b></div><div>Ошибок: <b>'+st.k[0]+'</b></div><div>Доверие: <b>'+st.tr+'</b></div><div>Нервы: <b>'+st.ne+'</b></div></div><p>'+(over?(st.tr<=0?"Доверие упало до нуля: посетители перестали верить совету первого стола.":"Нервы закончились: смену пришлось закрыть."):"Допродажа работает, когда она отвечает на симптом: подберите форму, выясните детали и предложите дополнение.")+'</p>'+(nw.length?'<p><b>Открыто:</b> '+nw.join(", ")+'.</p>':'')+'<button class="go" id="again">В меню</button></section>';
+document.getElementById("again").onclick=function(){home();window.scrollTo(0,0)};
+}
+load();
+var SHEET_URL="https://script.google.com/macros/s/AKfycbwMnDY5J0OrghvccK6iZi8YQOI0V0IRQ9DU1ZXfKO7x-hBnbSRVu8kiDfprHfa_mDDs/exec",TOKEN="Hemopran",PROF=null;
+function loadProf(){try{PROF=JSON.parse(localStorage.getItem("pervo-prof")||"null")}catch(e){PROF=null}}
+function login(msg){
+app.innerHTML='<section class="win"><h2>Вход в смену</h2><p class="lead">Укажите данные, чтобы результаты попали в рейтинг.</p>'+(msg?'<p class="err" role="alert">'+msg+'</p>':'')+'<label>ФИО<input type="text" id="fio" autocomplete="name" value="'+(PROF?PROF.fio.replace(/"/g,""):"")+'"></label><label>Аптека (город, номер)<input type="text" id="apt" value="'+(PROF?PROF.apt.replace(/"/g,""):"")+'"></label><label class="chk"><input type="checkbox" id="cons"> Согласен на обработку этих данных для учёта результатов и выдачи призов</label><button class="go" id="ok">Войти</button></section>';
+document.getElementById("ok").onclick=function(){
+var f=document.getElementById("fio").value.trim().replace(/\s+/g," "),a=document.getElementById("apt").value.trim();
+if(f.split(" ").length<2)return login("Введите фамилию и имя.");
+if(a.length<2)return login("Укажите аптеку.");
+if(!document.getElementById("cons").checked)return login("Нужно согласие на обработку данных.");
+PROF={fio:f,apt:a};try{localStorage.setItem("pervo-prof",JSON.stringify(PROF))}catch(e){}
+home();window.scrollTo(0,0)}}
+var _home=home;home=function(){if(!PROF){login();return}_home();
+app.insertAdjacentHTML("afterbegin",'<p class="note" style="margin:0 0 10px">Игрок: <b></b> · <button class="link" id="chg">сменить</button></p>');
+app.querySelector("p b").textContent=PROF.fio+", "+PROF.apt;document.getElementById("chg").onclick=function(){login()}};
+var _end=end;end=function(o){_end(o);submit(o)};
+function lb(){return fetch(SHEET_URL+"?top=10").then(function(r){return r.json()}).then(function(l){
+var b=document.getElementById("lb");if(!b||!l.length)return;b.innerHTML='<p><b>Рейтинг</b></p><ol></ol>';var ol=b.querySelector("ol");
+l.forEach(function(x){var li=document.createElement("li");li.textContent=x.name+", "+x.apt+": "+x.score;if(PROF&&x.name.split(" ")[0]==PROF.fio.split(" ")[0]&&x.apt==PROF.apt)li.className="me";ol.appendChild(li)})}).catch(function(){})}
+function submit(over){
+var k=st.k,sc=Math.max(0,k[2]*10+k[1]*3-k[0]*10+st.n*15+(st.n>=st.plan?30:0)+(over?0:20));
+var rec={token:TOKEN,fio:PROF.fio,apt:PROF.apt,shift:st.night?"Ночная":"Дневная",exp:cfg.ex=="exp"?"Со стажем":"Стажёр",ok:k[2],mid:k[1],bad:k[0],n:st.n,byn:st.n*PRICE,plan:st.plan,done:st.n>=st.plan?"да":"нет",tr:st.tr,ne:st.ne,early:over?"да":"нет",score:sc};
+var w=app.querySelector(".win"),bx=document.createElement("div");
+bx.innerHTML='<p><b>Очки смены: '+sc+'</b></p><p class="note" id="snd">'+(SHEET_URL?"Отправляем результат…":"Учёт не подключён: результат не сохранён в таблице.")+'</p><div id="lb"></div>';
+w.insertBefore(bx,w.querySelector("#again"));
+if(!SHEET_URL)return;
+fetch(SHEET_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain"},body:JSON.stringify(rec)}).then(function(){document.getElementById("snd").textContent="Результат отправлен.";return lb()}).catch(function(){var e=document.getElementById("snd");if(e)e.textContent="Не удалось отправить результат. Проверьте интернет."})}
+loadProf();home();
+
+</script>
+</body>
+</html>
